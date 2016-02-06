@@ -27,24 +27,6 @@ public interface GoalInterface {
 
     /**
      * 
-     * @param hmTypeId
-     * @param userId
-     * @return
-     *     returns java.util.List<ucoach.data.internal.ws.Goal>
-     */
-    @WebMethod
-    @WebResult(name = "GoalFromUserByType", targetNamespace = "")
-    @RequestWrapper(localName = "getGoalsFromUserByHMType", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetGoalsFromUserByHMType")
-    @ResponseWrapper(localName = "getGoalsFromUserByHMTypeResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetGoalsFromUserByHMTypeResponse")
-    @Action(input = "http://ws.data.ucoach/GoalInterface/getGoalsFromUserByHMTypeRequest", output = "http://ws.data.ucoach/GoalInterface/getGoalsFromUserByHMTypeResponse")
-    public List<Goal> getGoalsFromUserByHMType(
-        @WebParam(name = "userId", targetNamespace = "")
-        int userId,
-        @WebParam(name = "hmTypeId", targetNamespace = "")
-        int hmTypeId);
-
-    /**
-     * 
      * @param goal
      * @param hmTypeId
      * @param userId
@@ -67,6 +49,21 @@ public interface GoalInterface {
     /**
      * 
      * @param goalId
+     * @return
+     *     returns ucoach.data.internal.ws.Goal
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "achieveGoal", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.AchieveGoal")
+    @ResponseWrapper(localName = "achieveGoalResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.AchieveGoalResponse")
+    @Action(input = "http://ws.data.ucoach/GoalInterface/achieveGoalRequest", output = "http://ws.data.ucoach/GoalInterface/achieveGoalResponse")
+    public Goal achieveGoal(
+        @WebParam(name = "goalId", targetNamespace = "")
+        int goalId);
+
+    /**
+     * 
+     * @param goalId
      */
     @WebMethod
     @RequestWrapper(localName = "deleteGoal", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.DeleteGoal")
@@ -75,5 +72,44 @@ public interface GoalInterface {
     public void deleteGoal(
         @WebParam(name = "goalId", targetNamespace = "")
         int goalId);
+
+    /**
+     * 
+     * @param achieved
+     * @param hmTypeId
+     * @param userId
+     * @return
+     *     returns java.util.List<ucoach.data.internal.ws.Goal>
+     */
+    @WebMethod
+    @WebResult(name = "GoalFromUserByTypeAndStatus", targetNamespace = "")
+    @RequestWrapper(localName = "getGoalsFromUserByTypeAndStatus", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetGoalsFromUserByTypeAndStatus")
+    @ResponseWrapper(localName = "getGoalsFromUserByTypeAndStatusResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetGoalsFromUserByTypeAndStatusResponse")
+    @Action(input = "http://ws.data.ucoach/GoalInterface/getGoalsFromUserByTypeAndStatusRequest", output = "http://ws.data.ucoach/GoalInterface/getGoalsFromUserByTypeAndStatusResponse")
+    public List<Goal> getGoalsFromUserByTypeAndStatus(
+        @WebParam(name = "userId", targetNamespace = "")
+        int userId,
+        @WebParam(name = "hmTypeId", targetNamespace = "")
+        int hmTypeId,
+        @WebParam(name = "achieved", targetNamespace = "")
+        int achieved);
+
+    /**
+     * 
+     * @param hmTypeId
+     * @param userId
+     * @return
+     *     returns java.util.List<ucoach.data.internal.ws.Goal>
+     */
+    @WebMethod
+    @WebResult(name = "GoalFromUserByType", targetNamespace = "")
+    @RequestWrapper(localName = "getGoalsFromUserByType", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetGoalsFromUserByType")
+    @ResponseWrapper(localName = "getGoalsFromUserByTypeResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetGoalsFromUserByTypeResponse")
+    @Action(input = "http://ws.data.ucoach/GoalInterface/getGoalsFromUserByTypeRequest", output = "http://ws.data.ucoach/GoalInterface/getGoalsFromUserByTypeResponse")
+    public List<Goal> getGoalsFromUserByType(
+        @WebParam(name = "userId", targetNamespace = "")
+        int userId,
+        @WebParam(name = "hmTypeId", targetNamespace = "")
+        int hmTypeId);
 
 }

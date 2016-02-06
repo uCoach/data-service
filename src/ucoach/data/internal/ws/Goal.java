@@ -18,7 +18,8 @@ import javax.xml.datatype.XMLGregorianCalendar;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="achieved" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="achieved" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="createdDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="dueDate" type="{http://www.w3.org/2001/XMLSchema}dateTime" minOccurs="0"/>
  *         &lt;element name="frequency" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *         &lt;element name="hmType" type="{http://ws.data.ucoach/}hmType" minOccurs="0"/>
@@ -36,6 +37,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "goal", propOrder = {
     "achieved",
+    "createdDate",
     "dueDate",
     "frequency",
     "hmType",
@@ -45,7 +47,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 })
 public class Goal {
 
-    protected String achieved;
+    protected int achieved;
+    @XmlSchemaType(name = "dateTime")
+    protected XMLGregorianCalendar createdDate;
     @XmlSchemaType(name = "dateTime")
     protected XMLGregorianCalendar dueDate;
     protected String frequency;
@@ -57,25 +61,41 @@ public class Goal {
     /**
      * Recupera il valore della proprietà achieved.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
-    public String getAchieved() {
+    public int getAchieved() {
         return achieved;
     }
 
     /**
      * Imposta il valore della proprietà achieved.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
+     */
+    public void setAchieved(int value) {
+        this.achieved = value;
+    }
+
+    /**
+     * Recupera il valore della proprietà createdDate.
+     * 
+     * @return
+     *     possible object is
+     *     {@link XMLGregorianCalendar }
      *     
      */
-    public void setAchieved(String value) {
-        this.achieved = value;
+    public XMLGregorianCalendar getCreatedDate() {
+        return createdDate;
+    }
+
+    /**
+     * Imposta il valore della proprietà createdDate.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link XMLGregorianCalendar }
+     *     
+     */
+    public void setCreatedDate(XMLGregorianCalendar value) {
+        this.createdDate = value;
     }
 
     /**
