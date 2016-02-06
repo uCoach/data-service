@@ -12,6 +12,10 @@ public class GoalModelBuilder {
 	 * @return
 	 */
 	public static GoalModel build(Goal goal) {
+		
+		if (goal == null)
+			return null;
+
 		GoalModel model = new GoalModel();
 		model.setId(goal.getId());
 		model.setObjective(goal.getObjective());
@@ -19,8 +23,8 @@ public class GoalModelBuilder {
 		model.setAchieved(goal.getAchieved());
 		model.setFrequency(goal.getFrequency());
 		model.setHmType(HMTypeModelBuilder.build(goal.getHmType()));
-		model.setCreatedDate(DateHandler.toDate(goal.getCreatedDate()));
-		model.setDueDate(DateHandler.toDate(goal.getDueDate()));
+		model.setCreatedDate(DateHandler.toString(goal.getCreatedDate()));
+		model.setDueDate(DateHandler.toString(goal.getDueDate()));
 		
 		return model;
 	}

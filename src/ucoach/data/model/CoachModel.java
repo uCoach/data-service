@@ -15,7 +15,7 @@ public class CoachModel implements Serializable {
   private int id;
   private String lastname;
   private String firstname;
-  private Date birthdate;
+  private String birthdate;
   private String email;
   private String password;
   
@@ -29,7 +29,7 @@ public class CoachModel implements Serializable {
   public String getFirstname(){
     return firstname;
   }
-  public Date getBirthdate(){
+  public String getBirthdate(){
     return birthdate;
   }
   public String getEmail(){
@@ -49,7 +49,7 @@ public class CoachModel implements Serializable {
   public void setFirstname(String firstname){
     this.firstname = firstname;
   }
-  public void setBirthdate(Date birthdate){
+  public void setBirthdate(String birthdate){
     this.birthdate = birthdate;
   }
   public void setEmail(String email){

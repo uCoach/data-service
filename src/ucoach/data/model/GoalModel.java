@@ -15,8 +15,8 @@ public class GoalModel implements Serializable {
   private String frequency;
   private String objective;
   private Float value;
-  private Date createdDate;
-  private Date dueDate;
+  private String createdDate;
+  private String dueDate;
   private int achieved;
   private HMTypeModel hmType;
   
@@ -33,10 +33,10 @@ public class GoalModel implements Serializable {
   public Float getValue(){
     return value;
   }
-  public Date getCreatedDate(){
+  public String getCreatedDate(){
     return createdDate;
   }
-  public Date getDueDate(){
+  public String getDueDate(){
     return dueDate;
   }
   public int getAchieved(){
@@ -59,10 +59,10 @@ public class GoalModel implements Serializable {
   public void setValue(Float value){
     this.value = value;
   }
-  public void setCreatedDate(Date createdDate){
+  public void setCreatedDate(String createdDate){
     this.createdDate = createdDate;
   }
-  public void setDueDate(Date dueDate){
+  public void setDueDate(String dueDate){
     this.dueDate = dueDate;
   }
   public void setAchieved(int achieved){

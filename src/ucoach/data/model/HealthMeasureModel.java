@@ -13,7 +13,7 @@ public class HealthMeasureModel implements Serializable {
 
   private int id;
   private Float value;
-  private Date createdDate;
+  private String createdDate;
   private HMTypeModel hmType;
   
   // Getters
@@ -23,7 +23,7 @@ public class HealthMeasureModel implements Serializable {
   public Float getValue(){
     return value;
   }
-  public Date getCreatedDate(){
+  public String getCreatedDate(){
     return createdDate;
   }
 
@@ -38,7 +38,7 @@ public class HealthMeasureModel implements Serializable {
   public void setValue(Float value){
     this.value = value;
   }
-  public void setCreatedDate(Date createdDate){
+  public void setCreatedDate(String createdDate){
     this.createdDate = createdDate;
   }
   public void setHmType(HMTypeModel hmType){

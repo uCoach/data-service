@@ -12,13 +12,16 @@ public class UserModelBuilder {
 	 * @return
 	 */
 	public static UserModel build(User user) {
+		if (user == null)
+			return null;
+
 		UserModel model = new UserModel();
 		model.setId(user.getId());
 		model.setFirstname(user.getFirstname());
 		model.setLastname(user.getLastname());
 		model.setEmail(user.getEmail());
 		model.setPassword(user.getPassword());
-		model.setBirthdate(DateHandler.toDate(user.getBirthdate()));
+		model.setBirthdate(DateHandler.toString(user.getBirthdate()));
 		model.setCoach(CoachModelBuilder.build(user.getCoach()));
 		model.setCurrentHealthMeasures(
 				HealthMeasureModelBuilder.buildList(user.getCurrentHealthMeasures().getHealthMeasure())

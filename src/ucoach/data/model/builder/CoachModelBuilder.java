@@ -13,8 +13,11 @@ public class CoachModelBuilder {
 	 */
 	public static CoachModel build(Coach coach) {
 
+		if (coach == null)
+			return null;
+
 		CoachModel model = new CoachModel();
-		model.setBirthdate(DateHandler.toDate(coach.getBirthdate()));
+		model.setBirthdate(DateHandler.toString(coach.getBirthdate()));
 		model.setEmail(coach.getEmail());
 		model.setFirstname(coach.getFirstname());
 		model.setId(coach.getId());

@@ -11,6 +11,10 @@ public class HMTypeModelBuilder {
 	 * @return
 	 */
 	public static HMTypeModel build(HmType type) {
+
+		if (type == null)
+			return null;
+
 		HMTypeModel model = new HMTypeModel();
 		model.setId(type.getId());
 		model.setName(type.getName());

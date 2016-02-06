@@ -15,11 +15,15 @@ public class HealthMeasureModelBuilder {
 	 * @return
 	 */
 	public static HealthMeasureModel build(HealthMeasure measure) {
+		
+		if (measure == null)
+			return null;
+
 		HealthMeasureModel model = new HealthMeasureModel();
 		model.setId(measure.getId());
 		model.setHmType(HMTypeModelBuilder.build(measure.getHmType()));
 		model.setValue(measure.getValue());
-		model.setCreatedDate(DateHandler.toDate(measure.getCreatedDate()));
+		model.setCreatedDate(DateHandler.toString(measure.getCreatedDate()));
 		
 		return model;
 	}
@@ -31,6 +35,9 @@ public class HealthMeasureModelBuilder {
 	 */
 	public static List<HealthMeasureModel> buildList(List<HealthMeasure> measures) {
 		
+		if (measures == null)
+			return null;
+
 		List<HealthMeasureModel> modelList = new ArrayList<HealthMeasureModel>();
 
 		for (HealthMeasure measure: measures) {

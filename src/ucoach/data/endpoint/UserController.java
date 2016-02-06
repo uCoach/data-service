@@ -13,7 +13,6 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.json.JSONObject;
 
@@ -22,7 +21,6 @@ import ucoach.data.internal.ws.User;
 import ucoach.data.internal.ws.builder.UserBuilder;
 import ucoach.data.model.UserModel;
 import ucoach.data.model.builder.UserModelBuilder;
-import ucoach.data.util.*;
 
 @Path("/user")
 public class UserController {
@@ -49,8 +47,13 @@ public class UserController {
 		user = client.createUser(user);
 		
 		// Build new model from User class
-		UserModel model = UserModelBuilder.build(user);
-		
+		UserModel model = null;
+		try{
+			model = UserModelBuilder.build(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 		// Return model
 		return Response.status(200).entity(model).build();
 	}
