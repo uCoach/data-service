@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="user" type="{http://ws.data.ucoach/}user" minOccurs="0"/>
+ *         &lt;element name="createdUser" type="{http://ws.data.ucoach/}user" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,34 +27,34 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "createUserResponse", propOrder = {
-    "user"
+    "createdUser"
 })
 public class CreateUserResponse {
 
-    protected User user;
+    protected User createdUser;
 
     /**
-     * Recupera il valore della proprietà user.
+     * Recupera il valore della proprietà createdUser.
      * 
      * @return
      *     possible object is
      *     {@link User }
      *     
      */
-    public User getUser() {
-        return user;
+    public User getCreatedUser() {
+        return createdUser;
     }
 
     /**
-     * Imposta il valore della proprietà user.
+     * Imposta il valore della proprietà createdUser.
      * 
      * @param value
      *     allowed object is
      *     {@link User }
      *     
      */
-    public void setUser(User value) {
-        this.user = value;
+    public void setCreatedUser(User value) {
+        this.createdUser = value;
     }
 
 }

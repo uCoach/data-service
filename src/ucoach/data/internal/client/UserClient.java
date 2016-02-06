@@ -1,6 +1,7 @@
 package ucoach.data.internal.client;
 
 import javax.xml.ws.BindingProvider;
+import javax.xml.ws.Holder;
 
 import ucoach.data.internal.client.Authorization;
 import ucoach.data.internal.ws.User;
@@ -24,7 +25,7 @@ public class UserClient {
 	 * Method to get user by id
 	 * @param userId
 	 */
-	public User getUser(String userId) {
+	public User getUserById(String userId) {
 
 		User user;
 
@@ -38,5 +39,18 @@ public class UserClient {
 		}
 		
 		return user;
+	}
+
+	/**
+	 * Create new user
+	 * @param user
+	 */
+	public User createUser(User user) {
+		try {
+			return userInterface.createUser(user);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

@@ -1,4 +1,4 @@
-package ucoach.data.external.util;
+package ucoach.data.util;
 
 import org.json.JSONArray;
 import org.json.JSONException;

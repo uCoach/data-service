@@ -26,21 +26,6 @@ public interface GoogleTokensInterface {
 
     /**
      * 
-     * @param userId
-     * @return
-     *     returns ucoach.data.internal.ws.GoogleTokens
-     */
-    @WebMethod
-    @WebResult(name = "tokens", targetNamespace = "")
-    @RequestWrapper(localName = "getTokens", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetTokens")
-    @ResponseWrapper(localName = "getTokensResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetTokensResponse")
-    @Action(input = "http://ws.data.ucoach/GoogleTokensInterface/getTokensRequest", output = "http://ws.data.ucoach/GoogleTokensInterface/getTokensResponse")
-    public GoogleTokens getTokens(
-        @WebParam(name = "userId", targetNamespace = "")
-        int userId);
-
-    /**
-     * 
      * @param accessToken
      * @param userId
      * @param refreshToken
@@ -59,6 +44,21 @@ public interface GoogleTokensInterface {
         String accessToken,
         @WebParam(name = "refreshToken", targetNamespace = "")
         String refreshToken);
+
+    /**
+     * 
+     * @param userId
+     * @return
+     *     returns ucoach.data.internal.ws.GoogleTokens
+     */
+    @WebMethod
+    @WebResult(name = "tokens", targetNamespace = "")
+    @RequestWrapper(localName = "getTokens", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetTokens")
+    @ResponseWrapper(localName = "getTokensResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetTokensResponse")
+    @Action(input = "http://ws.data.ucoach/GoogleTokensInterface/getTokensRequest", output = "http://ws.data.ucoach/GoogleTokensInterface/getTokensResponse")
+    public GoogleTokens getTokens(
+        @WebParam(name = "userId", targetNamespace = "")
+        int userId);
 
     /**
      * 
