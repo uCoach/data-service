@@ -33,7 +33,7 @@ public class JsonParser {
 	 * @throws Exception 
 	 */
 	public String getElement(String expr) throws Exception {
-		
+
 		JSONObject localJsonObj = jsonObj;
 		
 		if (localJsonObj == null)

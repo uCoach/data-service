@@ -20,6 +20,7 @@ public class UserBuilder {
 			jsonParser.loadJson(data);
 		
 			// Parse json data
+			String userId = jsonParser.getElement("userId");
 			String firstname = jsonParser.getElement("firstname");
 			String lastname = jsonParser.getElement("lastname");
 			String birthdate = jsonParser.getElement("birthdate");
@@ -28,11 +29,18 @@ public class UserBuilder {
 			
 			// Create new user
 			User user = new User();
-			user.setFirstname(firstname);
-			user.setLastname(lastname);
-			user.setEmail(email);
-			user.setPassword(password);
-			user.setBirthdate(DateHandler.toCalendar(birthdate));
+			if (userId != "")
+				user.setId(Integer.valueOf(userId));
+			if (firstname != "")
+				user.setFirstname(firstname);
+			if (lastname != "")
+				user.setLastname(lastname);
+			if (email != "")
+				user.setEmail(email);
+			if (password != "")
+				user.setPassword(password);
+			if (birthdate != "")
+				user.setBirthdate(DateHandler.toCalendar(birthdate));
 
 			return user;
 
