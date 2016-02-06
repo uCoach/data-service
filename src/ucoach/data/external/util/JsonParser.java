@@ -34,19 +34,22 @@ public class JsonParser {
 	 */
 	public String getElement(String expr) throws Exception {
 		
-		if (jsonObj == null)
+		JSONObject localJsonObj = jsonObj;
+		
+		if (localJsonObj == null)
 			throw new Exception("Not a JSON object");
 
 		String[] splitted = expr.split("/");
-		if (splitted.length == 1) {
-			
+		int length = splitted.length;
+		if (length == 1) {
+			return getSingleElement(localJsonObj, expr);
 		}
-		
-		try {
-			return jsonObj.getJSONObject(expr).toString();
-		} catch (JSONException e) {}
-		
-		return "";
+
+		for (int i = 0; i < length - 1; i++) {
+			localJsonObj = localJsonObj.getJSONObject(splitted[i]);
+		}
+
+		return getSingleElement(localJsonObj, splitted[length - 1]);
 	}
 	
 	/**
@@ -61,7 +64,12 @@ public class JsonParser {
 		return jsonArr.length();
 	}
 
-	private String getSingleElement(String expr) {
+	/**
+	 * Get single element
+	 * @param expr
+	 * @return
+	 */
+	private String getSingleElement(JSONObject jsonObj, String expr) {
 		try {
 			return jsonObj.getString(expr);
 		} catch (JSONException e) {}
@@ -72,6 +80,10 @@ public class JsonParser {
 		
 		try {
 			return Double.toString(jsonObj.getDouble(expr));
+		} catch (JSONException e) {}
+		
+		try {
+			return jsonObj.getJSONObject(expr).toString();
 		} catch (JSONException e) {}
 
 		return "";
