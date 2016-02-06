@@ -24,16 +24,14 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetGoalsFromUserByTypeAndStatusResponse_QNAME = new QName("http://ws.data.ucoach/", "getGoalsFromUserByTypeAndStatusResponse");
-    private final static QName _AchieveGoalResponse_QNAME = new QName("http://ws.data.ucoach/", "achieveGoalResponse");
-    private final static QName _CreateGoal_QNAME = new QName("http://ws.data.ucoach/", "createGoal");
-    private final static QName _DeleteGoal_QNAME = new QName("http://ws.data.ucoach/", "deleteGoal");
-    private final static QName _GetGoalsFromUserByType_QNAME = new QName("http://ws.data.ucoach/", "getGoalsFromUserByType");
-    private final static QName _AchieveGoal_QNAME = new QName("http://ws.data.ucoach/", "achieveGoal");
-    private final static QName _CreateGoalResponse_QNAME = new QName("http://ws.data.ucoach/", "createGoalResponse");
-    private final static QName _DeleteGoalResponse_QNAME = new QName("http://ws.data.ucoach/", "deleteGoalResponse");
-    private final static QName _GetGoalsFromUserByTypeAndStatus_QNAME = new QName("http://ws.data.ucoach/", "getGoalsFromUserByTypeAndStatus");
-    private final static QName _GetGoalsFromUserByTypeResponse_QNAME = new QName("http://ws.data.ucoach/", "getGoalsFromUserByTypeResponse");
+    private final static QName _GetCoachResponse_QNAME = new QName("http://ws.data.ucoach/", "getCoachResponse");
+    private final static QName _DeleteCoach_QNAME = new QName("http://ws.data.ucoach/", "deleteCoach");
+    private final static QName _CreateCoach_QNAME = new QName("http://ws.data.ucoach/", "createCoach");
+    private final static QName _UpdateCoachResponse_QNAME = new QName("http://ws.data.ucoach/", "updateCoachResponse");
+    private final static QName _DeleteCoachResponse_QNAME = new QName("http://ws.data.ucoach/", "deleteCoachResponse");
+    private final static QName _CreateCoachResponse_QNAME = new QName("http://ws.data.ucoach/", "createCoachResponse");
+    private final static QName _GetCoach_QNAME = new QName("http://ws.data.ucoach/", "getCoach");
+    private final static QName _UpdateCoach_QNAME = new QName("http://ws.data.ucoach/", "updateCoach");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: ucoach.data.internal.ws
@@ -43,189 +41,147 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetGoalsFromUserByTypeAndStatus }
+     * Create an instance of {@link CreateCoachResponse }
      * 
      */
-    public GetGoalsFromUserByTypeAndStatus createGetGoalsFromUserByTypeAndStatus() {
-        return new GetGoalsFromUserByTypeAndStatus();
+    public CreateCoachResponse createCreateCoachResponse() {
+        return new CreateCoachResponse();
     }
 
     /**
-     * Create an instance of {@link GetGoalsFromUserByTypeResponse }
+     * Create an instance of {@link GetCoach }
      * 
      */
-    public GetGoalsFromUserByTypeResponse createGetGoalsFromUserByTypeResponse() {
-        return new GetGoalsFromUserByTypeResponse();
+    public GetCoach createGetCoach() {
+        return new GetCoach();
     }
 
     /**
-     * Create an instance of {@link DeleteGoalResponse }
+     * Create an instance of {@link UpdateCoach }
      * 
      */
-    public DeleteGoalResponse createDeleteGoalResponse() {
-        return new DeleteGoalResponse();
+    public UpdateCoach createUpdateCoach() {
+        return new UpdateCoach();
     }
 
     /**
-     * Create an instance of {@link CreateGoalResponse }
+     * Create an instance of {@link CreateCoach }
      * 
      */
-    public CreateGoalResponse createCreateGoalResponse() {
-        return new CreateGoalResponse();
+    public CreateCoach createCreateCoach() {
+        return new CreateCoach();
     }
 
     /**
-     * Create an instance of {@link CreateGoal }
+     * Create an instance of {@link DeleteCoach }
      * 
      */
-    public CreateGoal createCreateGoal() {
-        return new CreateGoal();
+    public DeleteCoach createDeleteCoach() {
+        return new DeleteCoach();
     }
 
     /**
-     * Create an instance of {@link DeleteGoal }
+     * Create an instance of {@link GetCoachResponse }
      * 
      */
-    public DeleteGoal createDeleteGoal() {
-        return new DeleteGoal();
+    public GetCoachResponse createGetCoachResponse() {
+        return new GetCoachResponse();
     }
 
     /**
-     * Create an instance of {@link GetGoalsFromUserByType }
+     * Create an instance of {@link DeleteCoachResponse }
      * 
      */
-    public GetGoalsFromUserByType createGetGoalsFromUserByType() {
-        return new GetGoalsFromUserByType();
+    public DeleteCoachResponse createDeleteCoachResponse() {
+        return new DeleteCoachResponse();
     }
 
     /**
-     * Create an instance of {@link AchieveGoalResponse }
+     * Create an instance of {@link UpdateCoachResponse }
      * 
      */
-    public AchieveGoalResponse createAchieveGoalResponse() {
-        return new AchieveGoalResponse();
+    public UpdateCoachResponse createUpdateCoachResponse() {
+        return new UpdateCoachResponse();
     }
 
     /**
-     * Create an instance of {@link GetGoalsFromUserByTypeAndStatusResponse }
+     * Create an instance of {@link Coach }
      * 
      */
-    public GetGoalsFromUserByTypeAndStatusResponse createGetGoalsFromUserByTypeAndStatusResponse() {
-        return new GetGoalsFromUserByTypeAndStatusResponse();
+    public Coach createCoach() {
+        return new Coach();
     }
 
     /**
-     * Create an instance of {@link AchieveGoal }
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCoachResponse }{@code >}}
      * 
      */
-    public AchieveGoal createAchieveGoal() {
-        return new AchieveGoal();
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "getCoachResponse")
+    public JAXBElement<GetCoachResponse> createGetCoachResponse(GetCoachResponse value) {
+        return new JAXBElement<GetCoachResponse>(_GetCoachResponse_QNAME, GetCoachResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link Goal }
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteCoach }{@code >}}
      * 
      */
-    public Goal createGoal() {
-        return new Goal();
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "deleteCoach")
+    public JAXBElement<DeleteCoach> createDeleteCoach(DeleteCoach value) {
+        return new JAXBElement<DeleteCoach>(_DeleteCoach_QNAME, DeleteCoach.class, null, value);
     }
 
     /**
-     * Create an instance of {@link HmType }
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateCoach }{@code >}}
      * 
      */
-    public HmType createHmType() {
-        return new HmType();
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "createCoach")
+    public JAXBElement<CreateCoach> createCreateCoach(CreateCoach value) {
+        return new JAXBElement<CreateCoach>(_CreateCoach_QNAME, CreateCoach.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetGoalsFromUserByTypeAndStatusResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateCoachResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "getGoalsFromUserByTypeAndStatusResponse")
-    public JAXBElement<GetGoalsFromUserByTypeAndStatusResponse> createGetGoalsFromUserByTypeAndStatusResponse(GetGoalsFromUserByTypeAndStatusResponse value) {
-        return new JAXBElement<GetGoalsFromUserByTypeAndStatusResponse>(_GetGoalsFromUserByTypeAndStatusResponse_QNAME, GetGoalsFromUserByTypeAndStatusResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "updateCoachResponse")
+    public JAXBElement<UpdateCoachResponse> createUpdateCoachResponse(UpdateCoachResponse value) {
+        return new JAXBElement<UpdateCoachResponse>(_UpdateCoachResponse_QNAME, UpdateCoachResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AchieveGoalResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteCoachResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "achieveGoalResponse")
-    public JAXBElement<AchieveGoalResponse> createAchieveGoalResponse(AchieveGoalResponse value) {
-        return new JAXBElement<AchieveGoalResponse>(_AchieveGoalResponse_QNAME, AchieveGoalResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "deleteCoachResponse")
+    public JAXBElement<DeleteCoachResponse> createDeleteCoachResponse(DeleteCoachResponse value) {
+        return new JAXBElement<DeleteCoachResponse>(_DeleteCoachResponse_QNAME, DeleteCoachResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CreateGoal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link CreateCoachResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "createGoal")
-    public JAXBElement<CreateGoal> createCreateGoal(CreateGoal value) {
-        return new JAXBElement<CreateGoal>(_CreateGoal_QNAME, CreateGoal.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "createCoachResponse")
+    public JAXBElement<CreateCoachResponse> createCreateCoachResponse(CreateCoachResponse value) {
+        return new JAXBElement<CreateCoachResponse>(_CreateCoachResponse_QNAME, CreateCoachResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteGoal }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetCoach }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "deleteGoal")
-    public JAXBElement<DeleteGoal> createDeleteGoal(DeleteGoal value) {
-        return new JAXBElement<DeleteGoal>(_DeleteGoal_QNAME, DeleteGoal.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "getCoach")
+    public JAXBElement<GetCoach> createGetCoach(GetCoach value) {
+        return new JAXBElement<GetCoach>(_GetCoach_QNAME, GetCoach.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetGoalsFromUserByType }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link UpdateCoach }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "getGoalsFromUserByType")
-    public JAXBElement<GetGoalsFromUserByType> createGetGoalsFromUserByType(GetGoalsFromUserByType value) {
-        return new JAXBElement<GetGoalsFromUserByType>(_GetGoalsFromUserByType_QNAME, GetGoalsFromUserByType.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link AchieveGoal }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "achieveGoal")
-    public JAXBElement<AchieveGoal> createAchieveGoal(AchieveGoal value) {
-        return new JAXBElement<AchieveGoal>(_AchieveGoal_QNAME, AchieveGoal.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link CreateGoalResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "createGoalResponse")
-    public JAXBElement<CreateGoalResponse> createCreateGoalResponse(CreateGoalResponse value) {
-        return new JAXBElement<CreateGoalResponse>(_CreateGoalResponse_QNAME, CreateGoalResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteGoalResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "deleteGoalResponse")
-    public JAXBElement<DeleteGoalResponse> createDeleteGoalResponse(DeleteGoalResponse value) {
-        return new JAXBElement<DeleteGoalResponse>(_DeleteGoalResponse_QNAME, DeleteGoalResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetGoalsFromUserByTypeAndStatus }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "getGoalsFromUserByTypeAndStatus")
-    public JAXBElement<GetGoalsFromUserByTypeAndStatus> createGetGoalsFromUserByTypeAndStatus(GetGoalsFromUserByTypeAndStatus value) {
-        return new JAXBElement<GetGoalsFromUserByTypeAndStatus>(_GetGoalsFromUserByTypeAndStatus_QNAME, GetGoalsFromUserByTypeAndStatus.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetGoalsFromUserByTypeResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "getGoalsFromUserByTypeResponse")
-    public JAXBElement<GetGoalsFromUserByTypeResponse> createGetGoalsFromUserByTypeResponse(GetGoalsFromUserByTypeResponse value) {
-        return new JAXBElement<GetGoalsFromUserByTypeResponse>(_GetGoalsFromUserByTypeResponse_QNAME, GetGoalsFromUserByTypeResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.data.ucoach/", name = "updateCoach")
+    public JAXBElement<UpdateCoach> createUpdateCoach(UpdateCoach value) {
+        return new JAXBElement<UpdateCoach>(_UpdateCoach_QNAME, UpdateCoach.class, null, value);
     }
 
 }

@@ -26,6 +26,7 @@ public class UserModelBuilder {
 		model.setCurrentHealthMeasures(
 				HealthMeasureModelBuilder.buildList(user.getCurrentHealthMeasures().getHealthMeasure())
 		);
+		model.setTwitterUsername(user.getTwitterUsername());
 
 		return model;
 	}

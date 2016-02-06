@@ -40,6 +40,26 @@ public class UserClient {
 		
 		return user;
 	}
+	
+	/**
+	 * Method to get user by id
+	 * @param userId
+	 */
+	public User getUserByEmail(String email) {
+
+		User user;
+
+		try {
+			// Get user by id
+			user = userInterface.getUserByEmail(email);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		return user;
+	}
 
 	/**
 	 * Create new user

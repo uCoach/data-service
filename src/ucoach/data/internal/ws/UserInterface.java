@@ -41,6 +41,21 @@ public interface UserInterface {
 
     /**
      * 
+     * @param email
+     * @return
+     *     returns ucoach.data.internal.ws.User
+     */
+    @WebMethod
+    @WebResult(name = "userByEmail", targetNamespace = "")
+    @RequestWrapper(localName = "getUserByEmail", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetUserByEmail")
+    @ResponseWrapper(localName = "getUserByEmailResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetUserByEmailResponse")
+    @Action(input = "http://ws.data.ucoach/UserInterface/getUserByEmailRequest", output = "http://ws.data.ucoach/UserInterface/getUserByEmailResponse")
+    public User getUserByEmail(
+        @WebParam(name = "email", targetNamespace = "")
+        String email);
+
+    /**
+     * 
      * @param user
      * @return
      *     returns ucoach.data.internal.ws.User

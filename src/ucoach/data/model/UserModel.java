@@ -22,6 +22,7 @@ public class UserModel implements Serializable {
   private String email;
   private String password;
   private CoachModel coach;
+  private String twitterUsername;
   private List<HealthMeasureModel> currentHealthMeasures;
 
   // Getters
@@ -42,6 +43,10 @@ public class UserModel implements Serializable {
   }
   public String getPassword(){
     return password;
+  }
+  
+  public String getTwitterUsername(){
+    return twitterUsername;
   }
 
   @XmlElementWrapper(name="currentHealthMeasures")
@@ -80,5 +85,9 @@ public class UserModel implements Serializable {
 
   public void setCoach(CoachModel coach){
     this.coach = coach;
+  }
+  
+  public void setTwitterUsername(String twitterUsername){
+    this.twitterUsername = twitterUsername;
   }
 }
