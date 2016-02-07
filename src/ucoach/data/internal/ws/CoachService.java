@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CoachService", targetNamespace = "http://ws.data.ucoach/", wsdlLocation = "http://192.168.0.103:6900/ws/coach?wsdl")
+@WebServiceClient(name = "CoachService", targetNamespace = "http://ws.data.ucoach/", wsdlLocation = "http://192.168.0.102:6900/ws/coach?wsdl")
 public class CoachService
     extends Service
 {
@@ -30,7 +30,7 @@ public class CoachService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.0.103:6900/ws/coach?wsdl");
+            url = new URL("http://192.168.0.102:6900/ws/coach?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

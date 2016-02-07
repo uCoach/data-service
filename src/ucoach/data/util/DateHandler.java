@@ -3,6 +3,7 @@ package ucoach.data.util;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -11,7 +12,7 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 public class DateHandler {
 
-	static DateFormat format = new SimpleDateFormat("Y-M-d");
+	static DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
 	/**
 	 * Converts XMLGregorianCalendar to Date string
@@ -45,4 +46,36 @@ public class DateHandler {
     }
     return xmlCalendar;
   }
+  
+  /**
+   * Helper method to get today date as string
+   * @return
+   */
+  public static Date addDays(Date date, int i) {
+  	Calendar cal = Calendar.getInstance();
+  	cal.setTime(date);
+    cal.add(Calendar.DATE, +i);
+    return cal.getTime();
+  }
+  
+  /**
+   * Helper method to get today date as string
+   * @return
+   */
+  public static Date removeDays(Date date, int i) {
+  	Calendar cal = Calendar.getInstance();
+  	cal.setTime(date);
+    cal.add(Calendar.DATE, -i);
+    return cal.getTime();
+  }
+
+  /**
+   * Parse string into date
+   * @param date
+   * @return
+   */
+  public static Date stringToDate(String date) throws ParseException {
+  	return format.parse(date);
+  }
 }
+

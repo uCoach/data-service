@@ -28,13 +28,72 @@ public class HealthMeasureClient {
 	 * @param typeId
 	 * @return
 	 */
-	public List<HealthMeasure> getHealthMeasuresFromUserByType(String userId, String typeId) {
+	public List<HealthMeasure> getHealthMeasuresFromUserByType(
+			String userId,
+			String typeId
+	) {
 
 		List<HealthMeasure> measures;
 
 		try {
 			measures = healthMeasureInterface.getHealthMeasuresFromUserByType(Integer.parseInt(userId), Integer.parseInt(typeId));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		return measures;
+	}
+	
+	/**
+	 * Method to get health measures by user by type
+	 * @param userId
+	 * @param typeId
+	 * @param fromDate
+	 * @return
+	 */
+	public List<HealthMeasure> getHealthMeasuresFromUserByType(
+			String userId,
+			String typeId,
+			String fromDate
+	) {
 
+		List<HealthMeasure> measures;
+
+		try {
+			measures = healthMeasureInterface.getHealthMeasuresFromUserByTypeAfterDate(
+					Integer.parseInt(userId), Integer.parseInt(typeId), fromDate);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		
+		return measures;
+	}
+	
+	/**
+	 * Method to get health measures by user by type
+	 * @param userId
+	 * @param typeId
+	 * @param fromDate
+	 * @param toDate
+	 * @return
+	 */
+	public List<HealthMeasure> getHealthMeasuresFromUserByType(
+			String userId,
+			String typeId,
+			String fromDate,
+			String toDate
+	) {
+
+		List<HealthMeasure> measures;
+
+		try {
+			measures = healthMeasureInterface.getHealthMeasuresFromUserByTypeBetweenDates(
+					Integer.parseInt(userId), Integer.parseInt(typeId), fromDate, toDate);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;

@@ -41,6 +41,8 @@ public class HealthMeasureModelBuilder {
 		List<HealthMeasureModel> modelList = new ArrayList<HealthMeasureModel>();
 
 		for (HealthMeasure measure: measures) {
+			if (measure == null) continue;
+			
 			HealthMeasureModel model = build(measure);
 			modelList.add(model);
 		}

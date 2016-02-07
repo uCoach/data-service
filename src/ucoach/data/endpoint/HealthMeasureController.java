@@ -1,6 +1,8 @@
 package ucoach.data.endpoint;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -25,6 +27,7 @@ import ucoach.data.internal.ws.builder.UserBuilder;
 import ucoach.data.model.HealthMeasureModel;
 import ucoach.data.model.builder.HealthMeasureModelBuilder;
 import ucoach.data.util.Authorization;
+import ucoach.data.util.Integration;
 
 @Path("/measure")
 public class HealthMeasureController {
@@ -105,30 +108,51 @@ public class HealthMeasureController {
 		json.put("status", 200).put("message", "Measure Deleted");
 		return Response.status(200).build();
 	}
-//	
-//	@GET
-//	@Path("/email/{email}")
-//  @Produces({MediaType.APPLICATION_JSON})
-//  public Response getUserByEmail(@PathParam("email") String email, @Context HttpHeaders headers) {
-//		
-//		// Build JSON response object
-//		JSONObject json = new JSONObject();
-//
-//		if(!Authorization.validateRequest(headers)){
-//  		json.put("status", 401).put("message", "Not Authorized");
-//      return Response.status(401).entity(json.toString()).build();
-//		}
-//
-//		// Get user
-//		UserClient client = new UserClient();
-//		User user = client.getUserByEmail(email);
-//		if (user == null) {
-//			System.out.println("User Not Found");
-//			json.put("status", 404).put("message", "User Not Found");
-//			return Response.status(404).entity(json.toString()).build();
-//		}
-//		
-//		UserModel model = UserModelBuilder.build(user);
-//		return Response.status(200).entity(model).build();
-//	}
+
+	@GET
+	@Path("/type/{typeId}/user/{userId}")
+  @Produces({MediaType.APPLICATION_JSON})
+  public Response getHealthMeasures(
+  	@PathParam("typeId") String typeId,
+  	@PathParam("userId") String userId,
+  	@QueryParam("fromDate") String fromDate,
+  	@QueryParam("toDate") String toDate,
+  	@Context HttpHeaders headers
+  ) {
+		// Build JSON response object
+		JSONObject json = new JSONObject();
+
+		if(!Authorization.validateRequest(headers)){
+  		json.put("status", 401).put("message", "Not Authorized");
+      return Response.status(401).entity(json.toString()).build();
+		}
+
+		// Validate user and type
+		
+		// New measure list
+		HealthMeasureClient client = new HealthMeasureClient();
+		List<HealthMeasure> measures = new ArrayList<HealthMeasure>();
+
+		// Get internal data
+		if (fromDate == null & toDate == null) 
+			measures.addAll(client.getHealthMeasuresFromUserByType(userId, typeId));
+		else if (fromDate != null & toDate == null)
+			measures.addAll(client.getHealthMeasuresFromUserByType(userId, typeId, fromDate));
+		else if (fromDate != null & toDate != null)
+			measures.addAll(client.getHealthMeasuresFromUserByType(userId, typeId, fromDate, toDate));
+
+		// Integrate with external data
+		if (!(fromDate == null & toDate == null)) {
+			try {
+				Integration integration = new Integration(userId);
+				measures.addAll(integration.getMeasuresFromExternalSources(Integer.valueOf(typeId), fromDate, toDate));
+			} catch (Exception e) {
+				System.out.println("Unable to integrate with external data");
+			}
+		}
+
+		// Build model and return
+		List<HealthMeasureModel> model = HealthMeasureModelBuilder.buildList(measures);
+		return Response.status(200).entity(model).build();
+	}
 }

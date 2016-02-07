@@ -22,9 +22,9 @@ public class HealthMeasureBuilder {
 		
 			// Parse json data
 			String value = jsonParser.getElement("value");
-			String date = jsonParser.getElement("created-date");
+			String date = jsonParser.getElement("createdDate");
 			String typeId = jsonParser.getElement("type");
-			
+
 			// Create new user
 			HealthMeasure measure = new HealthMeasure();
 			if (value != "")
