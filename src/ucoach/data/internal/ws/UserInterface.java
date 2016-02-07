@@ -26,6 +26,21 @@ public interface UserInterface {
 
     /**
      * 
+     * @param userId
+     * @return
+     *     returns ucoach.data.internal.ws.User
+     */
+    @WebMethod
+    @WebResult(name = "user", targetNamespace = "")
+    @RequestWrapper(localName = "getUser", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetUser")
+    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetUserResponse")
+    @Action(input = "http://ws.data.ucoach/UserInterface/getUserRequest", output = "http://ws.data.ucoach/UserInterface/getUserResponse")
+    public User getUser(
+        @WebParam(name = "userId", targetNamespace = "")
+        int userId);
+
+    /**
+     * 
      * @param email
      * @return
      *     returns ucoach.data.internal.ws.User
@@ -78,21 +93,6 @@ public interface UserInterface {
     @ResponseWrapper(localName = "deleteUserResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.DeleteUserResponse")
     @Action(input = "http://ws.data.ucoach/UserInterface/deleteUserRequest", output = "http://ws.data.ucoach/UserInterface/deleteUserResponse")
     public void deleteUser(
-        @WebParam(name = "userId", targetNamespace = "")
-        int userId);
-
-    /**
-     * 
-     * @param userId
-     * @return
-     *     returns ucoach.data.internal.ws.User
-     */
-    @WebMethod
-    @WebResult(name = "user", targetNamespace = "")
-    @RequestWrapper(localName = "getUser", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetUser")
-    @ResponseWrapper(localName = "getUserResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetUserResponse")
-    @Action(input = "http://ws.data.ucoach/UserInterface/getUserRequest", output = "http://ws.data.ucoach/UserInterface/getUserResponse")
-    public User getUser(
         @WebParam(name = "userId", targetNamespace = "")
         int userId);
 

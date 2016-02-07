@@ -1,11 +1,16 @@
 package ucoach.data.endpoint;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
@@ -104,6 +109,79 @@ public class GoalController {
 
 			GoalModel model = GoalModelBuilder.build(goal);
 			return Response.status(200).entity(model).build();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			return Response.serverError().build();
+		}
+	}
+
+	@GET
+	@Path("/user/{userId}")
+  @Produces({MediaType.APPLICATION_JSON})
+  public Response getGoals(
+  		@Context HttpHeaders headers,
+  		@PathParam("userId") String userId,
+  		@QueryParam("dueDateFrom") String dueDateFrom,
+  		@QueryParam("achieved") String achieved
+  ) {
+		// Build JSON response object
+		JSONObject json = new JSONObject();
+
+		if(!Authorization.validateRequest(headers)){
+  		json.put("status", 401).put("message", "Not Authorized");
+  		
+      return Response.status(401).entity(json.toString()).build();
+		}
+		
+		GoalClient client = new GoalClient();
+		List<Goal> goals = new ArrayList<Goal>();
+
+		if (dueDateFrom == null)
+			goals = client.getGoalsFromUser(userId, achieved);
+		else
+			goals = client.getGoalsFromUser(userId, achieved, dueDateFrom);
+		
+		// Build new model from class
+		try{
+
+			List<GoalModel> modelList = GoalModelBuilder.buildList(goals);
+			return Response.status(200).entity(modelList).build();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			return Response.serverError().build();
+		}
+	}
+	
+	@GET
+	@Path("/user/{userId}/daily/{dueDate}")
+  @Produces({MediaType.APPLICATION_JSON})
+  public Response getDailyGoals(
+  		@Context HttpHeaders headers,
+  		@PathParam("userId") String userId,
+  		@PathParam("dueDate") String dueDate,
+  		@QueryParam("achieved") String achieved
+  ) {
+		// Build JSON response object
+		JSONObject json = new JSONObject();
+
+		if(!Authorization.validateRequest(headers)){
+  		json.put("status", 401).put("message", "Not Authorized");
+  		
+      return Response.status(401).entity(json.toString()).build();
+		}
+		
+		GoalClient client = new GoalClient();
+		List<Goal> goals = client.getGoalsFromUser(userId, achieved, "daily", dueDate);
+		
+		// Build new model from class
+		try{
+
+			List<GoalModel> modelList = GoalModelBuilder.buildList(goals);
+			return Response.status(200).entity(modelList).build();
 
 		} catch (Exception e) {
 
