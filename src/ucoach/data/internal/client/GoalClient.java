@@ -1,7 +1,5 @@
 package ucoach.data.internal.client;
 
-import java.util.List;
-
 import javax.xml.ws.BindingProvider;
 
 import ucoach.data.internal.client.Authorization;
@@ -36,4 +34,19 @@ public class GoalClient {
 		}
 		return null;
 	}
+	
+	/**
+	 * Update goal to achieved
+	 * @param goalId
+	 * @return
+	 */
+	public Goal achieveGoal(String goalId) {
+		try {
+			return goalInterface.achieveGoal(Integer.valueOf(goalId));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 }

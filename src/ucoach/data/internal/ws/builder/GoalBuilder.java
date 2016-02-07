@@ -24,7 +24,7 @@ public class GoalBuilder {
 			String frequency = jsonParser.getElement("frequency");
 			String createdDate = jsonParser.getElement("createdDate");
 			String dueDate = jsonParser.getElement("dueDate");
-			String measureYype = jsonParser.getElement("measureYype");
+			String measureType = jsonParser.getElement("measureType");
 			String objective = jsonParser.getElement("objective");
 			String value = jsonParser.getElement("value");
 
@@ -38,7 +38,7 @@ public class GoalBuilder {
 			if (value != "") goal.setValue(Float.valueOf(value));
 
 			HmType type = new HmType();
-			if (measureYype != "") type.setId(Integer.valueOf(measureYype));
+			if (measureType != "") type.setId(Integer.valueOf(measureType));
 			goal.setHmType(type);
 
 			return goal;

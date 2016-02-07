@@ -35,7 +35,7 @@ public class HealthMeasureController {
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON})
   @Produces({MediaType.APPLICATION_JSON})
-  public Response createUser(String data, @Context HttpHeaders headers) {
+  public Response createMeasure(String data, @Context HttpHeaders headers) {
 
 		// Build JSON response object
 		JSONObject json = new JSONObject();

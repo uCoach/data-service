@@ -2,7 +2,9 @@ package ucoach.data.endpoint;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
@@ -61,6 +63,42 @@ public class GoalController {
 			return Response.status(500).entity(json.toString()).build();
 		}
 
+		// Build new model from class
+		try{
+
+			GoalModel model = GoalModelBuilder.build(goal);
+			return Response.status(200).entity(model).build();
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
+			return Response.serverError().build();
+		}
+	}
+	
+	@PUT
+	@Path("/{goalId}/achieved")
+  @Produces({MediaType.APPLICATION_JSON})
+  public Response updateGoal(@Context HttpHeaders headers, @PathParam("goalId") String goalId) {
+		// Build JSON response object
+		JSONObject json = new JSONObject();
+
+		if(!Authorization.validateRequest(headers)){
+  		json.put("status", 401).put("message", "Not Authorized");
+  		
+      return Response.status(401).entity(json.toString()).build();
+		}
+		
+		GoalClient client = new GoalClient();
+		
+		// Persist update
+		Goal goal = client.achieveGoal(goalId);
+		if (goal == null) {
+			System.out.println("Goal not found");
+			json.put("status", 404).put("message", "Goal not found");
+			return Response.status(404).entity(json.toString()).build();
+		}
+		
 		// Build new model from class
 		try{
 
