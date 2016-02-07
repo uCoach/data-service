@@ -26,6 +26,7 @@ public class UserBuilder {
 			String birthdate = jsonParser.getElement("birthdate");
 			String email = jsonParser.getElement("email");
 			String password = jsonParser.getElement("password");
+			String twitterUsername = jsonParser.getElement("twitterUsername");
 			
 			// Create new user
 			User user = new User();
@@ -41,6 +42,8 @@ public class UserBuilder {
 				user.setPassword(password);
 			if (birthdate != "")
 				user.setBirthdate(DateHandler.toCalendar(birthdate));
+			if (twitterUsername != "")
+				user.setTwitterUsername(twitterUsername);
 
 			return user;
 
