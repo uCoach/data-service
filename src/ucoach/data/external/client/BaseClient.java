@@ -18,7 +18,7 @@ import ucoach.data.util.*;
 public class BaseClient {
 	
 	protected JsonParser jsonParser = new JsonParser();
-	protected String baseUrl = "http://192.168.0.102:5700";
+	protected String baseUrl = "https://ucoach-external-data-service.herokuapp.com";
 	protected transient WebTarget baseTarget;
 	protected String mediaType = MediaType.APPLICATION_JSON;
 

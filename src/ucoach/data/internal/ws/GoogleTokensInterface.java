@@ -26,6 +26,24 @@ public interface GoogleTokensInterface {
 
     /**
      * 
+     * @param accessToken
+     * @param userId
+     * @return
+     *     returns ucoach.data.internal.ws.GoogleTokens
+     */
+    @WebMethod
+    @WebResult(name = "tokens", targetNamespace = "")
+    @RequestWrapper(localName = "updateTokens", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.UpdateTokens")
+    @ResponseWrapper(localName = "updateTokensResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.UpdateTokensResponse")
+    @Action(input = "http://ws.data.ucoach/GoogleTokensInterface/updateTokensRequest", output = "http://ws.data.ucoach/GoogleTokensInterface/updateTokensResponse")
+    public GoogleTokens updateTokens(
+        @WebParam(name = "userId", targetNamespace = "")
+        int userId,
+        @WebParam(name = "accessToken", targetNamespace = "")
+        String accessToken);
+
+    /**
+     * 
      * @param userId
      * @return
      *     returns ucoach.data.internal.ws.GoogleTokens
@@ -59,23 +77,5 @@ public interface GoogleTokensInterface {
         String accessToken,
         @WebParam(name = "refreshToken", targetNamespace = "")
         String refreshToken);
-
-    /**
-     * 
-     * @param accessToken
-     * @param userId
-     * @return
-     *     returns ucoach.data.internal.ws.GoogleTokens
-     */
-    @WebMethod
-    @WebResult(name = "tokens", targetNamespace = "")
-    @RequestWrapper(localName = "updateTokens", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.UpdateTokens")
-    @ResponseWrapper(localName = "updateTokensResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.UpdateTokensResponse")
-    @Action(input = "http://ws.data.ucoach/GoogleTokensInterface/updateTokensRequest", output = "http://ws.data.ucoach/GoogleTokensInterface/updateTokensResponse")
-    public GoogleTokens updateTokens(
-        @WebParam(name = "userId", targetNamespace = "")
-        int userId,
-        @WebParam(name = "accessToken", targetNamespace = "")
-        String accessToken);
 
 }
