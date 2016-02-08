@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per getGoalsFromUserAfterDueDate complex type.
+ * <p>Java class for getGoalsFromUserAfterDueDate complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="getGoalsFromUserAfterDueDate">
@@ -37,7 +37,7 @@ public class GetGoalsFromUserAfterDueDate {
     protected String dueDate;
 
     /**
-     * Recupera il valore della proprietà userId.
+     * Gets the value of the userId property.
      * 
      */
     public int getUserId() {
@@ -45,7 +45,7 @@ public class GetGoalsFromUserAfterDueDate {
     }
 
     /**
-     * Imposta il valore della proprietà userId.
+     * Sets the value of the userId property.
      * 
      */
     public void setUserId(int value) {
@@ -53,7 +53,7 @@ public class GetGoalsFromUserAfterDueDate {
     }
 
     /**
-     * Recupera il valore della proprietà dueDate.
+     * Gets the value of the dueDate property.
      * 
      * @return
      *     possible object is
@@ -65,7 +65,7 @@ public class GetGoalsFromUserAfterDueDate {
     }
 
     /**
-     * Imposta il valore della proprietà dueDate.
+     * Sets the value of the dueDate property.
      * 
      * @param value
      *     allowed object is

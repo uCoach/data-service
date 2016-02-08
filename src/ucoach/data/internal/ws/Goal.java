@@ -9,9 +9,9 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 
 /**
- * <p>Classe Java per goal complex type.
+ * <p>Java class for goal complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="goal">
@@ -59,7 +59,7 @@ public class Goal {
     protected Float value;
 
     /**
-     * Recupera il valore della proprietà achieved.
+     * Gets the value of the achieved property.
      * 
      */
     public int getAchieved() {
@@ -67,7 +67,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà achieved.
+     * Sets the value of the achieved property.
      * 
      */
     public void setAchieved(int value) {
@@ -75,7 +75,7 @@ public class Goal {
     }
 
     /**
-     * Recupera il valore della proprietà createdDate.
+     * Gets the value of the createdDate property.
      * 
      * @return
      *     possible object is
@@ -87,7 +87,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà createdDate.
+     * Sets the value of the createdDate property.
      * 
      * @param value
      *     allowed object is
@@ -99,7 +99,7 @@ public class Goal {
     }
 
     /**
-     * Recupera il valore della proprietà dueDate.
+     * Gets the value of the dueDate property.
      * 
      * @return
      *     possible object is
@@ -111,7 +111,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà dueDate.
+     * Sets the value of the dueDate property.
      * 
      * @param value
      *     allowed object is
@@ -123,7 +123,7 @@ public class Goal {
     }
 
     /**
-     * Recupera il valore della proprietà frequency.
+     * Gets the value of the frequency property.
      * 
      * @return
      *     possible object is
@@ -135,7 +135,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà frequency.
+     * Sets the value of the frequency property.
      * 
      * @param value
      *     allowed object is
@@ -147,7 +147,7 @@ public class Goal {
     }
 
     /**
-     * Recupera il valore della proprietà hmType.
+     * Gets the value of the hmType property.
      * 
      * @return
      *     possible object is
@@ -159,7 +159,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà hmType.
+     * Sets the value of the hmType property.
      * 
      * @param value
      *     allowed object is
@@ -171,7 +171,7 @@ public class Goal {
     }
 
     /**
-     * Recupera il valore della proprietà id.
+     * Gets the value of the id property.
      * 
      */
     public int getId() {
@@ -179,7 +179,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà id.
+     * Sets the value of the id property.
      * 
      */
     public void setId(int value) {
@@ -187,7 +187,7 @@ public class Goal {
     }
 
     /**
-     * Recupera il valore della proprietà objective.
+     * Gets the value of the objective property.
      * 
      * @return
      *     possible object is
@@ -199,7 +199,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà objective.
+     * Sets the value of the objective property.
      * 
      * @param value
      *     allowed object is
@@ -211,7 +211,7 @@ public class Goal {
     }
 
     /**
-     * Recupera il valore della proprietà value.
+     * Gets the value of the value property.
      * 
      * @return
      *     possible object is
@@ -223,7 +223,7 @@ public class Goal {
     }
 
     /**
-     * Imposta il valore della proprietà value.
+     * Sets the value of the value property.
      * 
      * @param value
      *     allowed object is

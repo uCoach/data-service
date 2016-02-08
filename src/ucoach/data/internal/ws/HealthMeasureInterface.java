@@ -27,18 +27,6 @@ public interface HealthMeasureInterface {
 
     /**
      * 
-     * @return
-     *     returns java.util.List<ucoach.data.internal.ws.HmType>
-     */
-    @WebMethod
-    @WebResult(name = "HMType", targetNamespace = "")
-    @RequestWrapper(localName = "getHMTypes", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetHMTypes")
-    @ResponseWrapper(localName = "getHMTypesResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetHMTypesResponse")
-    @Action(input = "http://ws.data.ucoach/HealthMeasureInterface/getHMTypesRequest", output = "http://ws.data.ucoach/HealthMeasureInterface/getHMTypesResponse")
-    public List<HmType> getHMTypes();
-
-    /**
-     * 
      * @param healthMeasure
      * @param hmTypeId
      * @param userId
@@ -69,6 +57,18 @@ public interface HealthMeasureInterface {
     public void deleteHealthMeasure(
         @WebParam(name = "healthMeasureId", targetNamespace = "")
         int healthMeasureId);
+
+    /**
+     * 
+     * @return
+     *     returns java.util.List<ucoach.data.internal.ws.HmType>
+     */
+    @WebMethod
+    @WebResult(name = "HMType", targetNamespace = "")
+    @RequestWrapper(localName = "getHMTypes", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetHMTypes")
+    @ResponseWrapper(localName = "getHMTypesResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetHMTypesResponse")
+    @Action(input = "http://ws.data.ucoach/HealthMeasureInterface/getHMTypesRequest", output = "http://ws.data.ucoach/HealthMeasureInterface/getHMTypesResponse")
+    public List<HmType> getHMTypes();
 
     /**
      * 

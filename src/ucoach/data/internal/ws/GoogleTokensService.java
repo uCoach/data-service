@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "GoogleTokensService", targetNamespace = "http://ws.data.ucoach/", wsdlLocation = "https://ucoach-internal-data-service.herokuapp.com/ws/google-tokens?wsdl")
+@WebServiceClient(name = "GoogleTokensService", targetNamespace = "http://ws.data.ucoach/", wsdlLocation = "http://ucoach-internal-data-service.herokuapp.com/ws/google-tokens?wsdl")
 public class GoogleTokensService
     extends Service
 {
@@ -30,7 +30,7 @@ public class GoogleTokensService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("https://ucoach-internal-data-service.herokuapp.com/ws/google-tokens?wsdl");
+            url = new URL("http://ucoach-internal-data-service.herokuapp.com/ws/google-tokens?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

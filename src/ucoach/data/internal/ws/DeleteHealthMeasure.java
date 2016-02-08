@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per deleteHealthMeasure complex type.
+ * <p>Java class for deleteHealthMeasure complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="deleteHealthMeasure">
@@ -34,7 +34,7 @@ public class DeleteHealthMeasure {
     protected int healthMeasureId;
 
     /**
-     * Recupera il valore della proprietà healthMeasureId.
+     * Gets the value of the healthMeasureId property.
      * 
      */
     public int getHealthMeasureId() {
@@ -42,7 +42,7 @@ public class DeleteHealthMeasure {
     }
 
     /**
-     * Imposta il valore della proprietà healthMeasureId.
+     * Sets the value of the healthMeasureId property.
      * 
      */
     public void setHealthMeasureId(int value) {

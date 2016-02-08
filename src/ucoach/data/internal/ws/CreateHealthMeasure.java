@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per createHealthMeasure complex type.
+ * <p>Java class for createHealthMeasure complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="createHealthMeasure">
@@ -40,7 +40,7 @@ public class CreateHealthMeasure {
     protected int hmTypeId;
 
     /**
-     * Recupera il valore della proprietà healthMeasure.
+     * Gets the value of the healthMeasure property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class CreateHealthMeasure {
     }
 
     /**
-     * Imposta il valore della proprietà healthMeasure.
+     * Sets the value of the healthMeasure property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class CreateHealthMeasure {
     }
 
     /**
-     * Recupera il valore della proprietà userId.
+     * Gets the value of the userId property.
      * 
      */
     public int getUserId() {
@@ -72,7 +72,7 @@ public class CreateHealthMeasure {
     }
 
     /**
-     * Imposta il valore della proprietà userId.
+     * Sets the value of the userId property.
      * 
      */
     public void setUserId(int value) {
@@ -80,7 +80,7 @@ public class CreateHealthMeasure {
     }
 
     /**
-     * Recupera il valore della proprietà hmTypeId.
+     * Gets the value of the hmTypeId property.
      * 
      */
     public int getHmTypeId() {
@@ -88,7 +88,7 @@ public class CreateHealthMeasure {
     }
 
     /**
-     * Imposta il valore della proprietà hmTypeId.
+     * Sets the value of the hmTypeId property.
      * 
      */
     public void setHmTypeId(int value) {

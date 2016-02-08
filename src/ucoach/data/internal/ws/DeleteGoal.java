@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per deleteGoal complex type.
+ * <p>Java class for deleteGoal complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="deleteGoal">
@@ -34,7 +34,7 @@ public class DeleteGoal {
     protected int goalId;
 
     /**
-     * Recupera il valore della proprietà goalId.
+     * Gets the value of the goalId property.
      * 
      */
     public int getGoalId() {
@@ -42,7 +42,7 @@ public class DeleteGoal {
     }
 
     /**
-     * Imposta il valore della proprietà goalId.
+     * Sets the value of the goalId property.
      * 
      */
     public void setGoalId(int value) {

@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per createGoal complex type.
+ * <p>Java class for createGoal complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="createGoal">
@@ -40,7 +40,7 @@ public class CreateGoal {
     protected int hmTypeId;
 
     /**
-     * Recupera il valore della proprietà goal.
+     * Gets the value of the goal property.
      * 
      * @return
      *     possible object is
@@ -52,7 +52,7 @@ public class CreateGoal {
     }
 
     /**
-     * Imposta il valore della proprietà goal.
+     * Sets the value of the goal property.
      * 
      * @param value
      *     allowed object is
@@ -64,7 +64,7 @@ public class CreateGoal {
     }
 
     /**
-     * Recupera il valore della proprietà userId.
+     * Gets the value of the userId property.
      * 
      */
     public int getUserId() {
@@ -72,7 +72,7 @@ public class CreateGoal {
     }
 
     /**
-     * Imposta il valore della proprietà userId.
+     * Sets the value of the userId property.
      * 
      */
     public void setUserId(int value) {
@@ -80,7 +80,7 @@ public class CreateGoal {
     }
 
     /**
-     * Recupera il valore della proprietà hmTypeId.
+     * Gets the value of the hmTypeId property.
      * 
      */
     public int getHmTypeId() {
@@ -88,7 +88,7 @@ public class CreateGoal {
     }
 
     /**
-     * Imposta il valore della proprietà hmTypeId.
+     * Sets the value of the hmTypeId property.
      * 
      */
     public void setHmTypeId(int value) {

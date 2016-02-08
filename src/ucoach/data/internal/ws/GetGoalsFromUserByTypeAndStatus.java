@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per getGoalsFromUserByTypeAndStatus complex type.
+ * <p>Java class for getGoalsFromUserByTypeAndStatus complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="getGoalsFromUserByTypeAndStatus">
@@ -40,7 +40,7 @@ public class GetGoalsFromUserByTypeAndStatus {
     protected int achieved;
 
     /**
-     * Recupera il valore della proprietà userId.
+     * Gets the value of the userId property.
      * 
      */
     public int getUserId() {
@@ -48,7 +48,7 @@ public class GetGoalsFromUserByTypeAndStatus {
     }
 
     /**
-     * Imposta il valore della proprietà userId.
+     * Sets the value of the userId property.
      * 
      */
     public void setUserId(int value) {
@@ -56,7 +56,7 @@ public class GetGoalsFromUserByTypeAndStatus {
     }
 
     /**
-     * Recupera il valore della proprietà hmTypeId.
+     * Gets the value of the hmTypeId property.
      * 
      */
     public int getHmTypeId() {
@@ -64,7 +64,7 @@ public class GetGoalsFromUserByTypeAndStatus {
     }
 
     /**
-     * Imposta il valore della proprietà hmTypeId.
+     * Sets the value of the hmTypeId property.
      * 
      */
     public void setHmTypeId(int value) {
@@ -72,7 +72,7 @@ public class GetGoalsFromUserByTypeAndStatus {
     }
 
     /**
-     * Recupera il valore della proprietà achieved.
+     * Gets the value of the achieved property.
      * 
      */
     public int getAchieved() {
@@ -80,7 +80,7 @@ public class GetGoalsFromUserByTypeAndStatus {
     }
 
     /**
-     * Imposta il valore della proprietà achieved.
+     * Sets the value of the achieved property.
      * 
      */
     public void setAchieved(int value) {

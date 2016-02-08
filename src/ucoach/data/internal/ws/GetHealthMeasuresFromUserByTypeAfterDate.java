@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per getHealthMeasuresFromUserByTypeAfterDate complex type.
+ * <p>Java class for getHealthMeasuresFromUserByTypeAfterDate complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="getHealthMeasuresFromUserByTypeAfterDate">
@@ -40,7 +40,7 @@ public class GetHealthMeasuresFromUserByTypeAfterDate {
     protected String afterDate;
 
     /**
-     * Recupera il valore della proprietà userId.
+     * Gets the value of the userId property.
      * 
      */
     public int getUserId() {
@@ -48,7 +48,7 @@ public class GetHealthMeasuresFromUserByTypeAfterDate {
     }
 
     /**
-     * Imposta il valore della proprietà userId.
+     * Sets the value of the userId property.
      * 
      */
     public void setUserId(int value) {
@@ -56,7 +56,7 @@ public class GetHealthMeasuresFromUserByTypeAfterDate {
     }
 
     /**
-     * Recupera il valore della proprietà hmTypeId.
+     * Gets the value of the hmTypeId property.
      * 
      */
     public int getHmTypeId() {
@@ -64,7 +64,7 @@ public class GetHealthMeasuresFromUserByTypeAfterDate {
     }
 
     /**
-     * Imposta il valore della proprietà hmTypeId.
+     * Sets the value of the hmTypeId property.
      * 
      */
     public void setHmTypeId(int value) {
@@ -72,7 +72,7 @@ public class GetHealthMeasuresFromUserByTypeAfterDate {
     }
 
     /**
-     * Recupera il valore della proprietà afterDate.
+     * Gets the value of the afterDate property.
      * 
      * @return
      *     possible object is
@@ -84,7 +84,7 @@ public class GetHealthMeasuresFromUserByTypeAfterDate {
     }
 
     /**
-     * Imposta il valore della proprietà afterDate.
+     * Sets the value of the afterDate property.
      * 
      * @param value
      *     allowed object is

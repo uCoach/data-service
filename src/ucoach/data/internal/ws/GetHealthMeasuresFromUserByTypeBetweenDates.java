@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per getHealthMeasuresFromUserByTypeBetweenDates complex type.
+ * <p>Java class for getHealthMeasuresFromUserByTypeBetweenDates complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="getHealthMeasuresFromUserByTypeBetweenDates">
@@ -43,7 +43,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     protected String toDate;
 
     /**
-     * Recupera il valore della proprietà userId.
+     * Gets the value of the userId property.
      * 
      */
     public int getUserId() {
@@ -51,7 +51,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     }
 
     /**
-     * Imposta il valore della proprietà userId.
+     * Sets the value of the userId property.
      * 
      */
     public void setUserId(int value) {
@@ -59,7 +59,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     }
 
     /**
-     * Recupera il valore della proprietà hmTypeId.
+     * Gets the value of the hmTypeId property.
      * 
      */
     public int getHmTypeId() {
@@ -67,7 +67,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     }
 
     /**
-     * Imposta il valore della proprietà hmTypeId.
+     * Sets the value of the hmTypeId property.
      * 
      */
     public void setHmTypeId(int value) {
@@ -75,7 +75,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     }
 
     /**
-     * Recupera il valore della proprietà fromDate.
+     * Gets the value of the fromDate property.
      * 
      * @return
      *     possible object is
@@ -87,7 +87,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     }
 
     /**
-     * Imposta il valore della proprietà fromDate.
+     * Sets the value of the fromDate property.
      * 
      * @param value
      *     allowed object is
@@ -99,7 +99,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     }
 
     /**
-     * Recupera il valore della proprietà toDate.
+     * Gets the value of the toDate property.
      * 
      * @return
      *     possible object is
@@ -111,7 +111,7 @@ public class GetHealthMeasuresFromUserByTypeBetweenDates {
     }
 
     /**
-     * Imposta il valore della proprietà toDate.
+     * Sets the value of the toDate property.
      * 
      * @param value
      *     allowed object is

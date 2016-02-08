@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per createHealthMeasureResponse complex type.
+ * <p>Java class for createHealthMeasureResponse complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="createHealthMeasureResponse">
@@ -34,7 +34,7 @@ public class CreateHealthMeasureResponse {
     protected HealthMeasure createdHealthMeasure;
 
     /**
-     * Recupera il valore della proprietà createdHealthMeasure.
+     * Gets the value of the createdHealthMeasure property.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class CreateHealthMeasureResponse {
     }
 
     /**
-     * Imposta il valore della proprietà createdHealthMeasure.
+     * Sets the value of the createdHealthMeasure property.
      * 
      * @param value
      *     allowed object is

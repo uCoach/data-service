@@ -7,9 +7,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Classe Java per updateCoach complex type.
+ * <p>Java class for updateCoach complex type.
  * 
- * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
  * &lt;complexType name="updateCoach">
@@ -34,7 +34,7 @@ public class UpdateCoach {
     protected Coach coach;
 
     /**
-     * Recupera il valore della proprietà coach.
+     * Gets the value of the coach property.
      * 
      * @return
      *     possible object is
@@ -46,7 +46,7 @@ public class UpdateCoach {
     }
 
     /**
-     * Imposta il valore della proprietà coach.
+     * Sets the value of the coach property.
      * 
      * @param value
      *     allowed object is

@@ -26,6 +26,21 @@ public interface CoachInterface {
 
     /**
      * 
+     * @param coachId
+     * @return
+     *     returns ucoach.data.internal.ws.Coach
+     */
+    @WebMethod
+    @WebResult(name = "coach", targetNamespace = "")
+    @RequestWrapper(localName = "getCoach", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetCoach")
+    @ResponseWrapper(localName = "getCoachResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetCoachResponse")
+    @Action(input = "http://ws.data.ucoach/CoachInterface/getCoachRequest", output = "http://ws.data.ucoach/CoachInterface/getCoachResponse")
+    public Coach getCoach(
+        @WebParam(name = "coachId", targetNamespace = "")
+        int coachId);
+
+    /**
+     * 
      * @param coach
      * @return
      *     returns ucoach.data.internal.ws.Coach
@@ -65,20 +80,5 @@ public interface CoachInterface {
     public Coach createCoach(
         @WebParam(name = "coach", targetNamespace = "")
         Coach coach);
-
-    /**
-     * 
-     * @param coachId
-     * @return
-     *     returns ucoach.data.internal.ws.Coach
-     */
-    @WebMethod
-    @WebResult(name = "coach", targetNamespace = "")
-    @RequestWrapper(localName = "getCoach", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetCoach")
-    @ResponseWrapper(localName = "getCoachResponse", targetNamespace = "http://ws.data.ucoach/", className = "ucoach.data.internal.ws.GetCoachResponse")
-    @Action(input = "http://ws.data.ucoach/CoachInterface/getCoachRequest", output = "http://ws.data.ucoach/CoachInterface/getCoachResponse")
-    public Coach getCoach(
-        @WebParam(name = "coachId", targetNamespace = "")
-        int coachId);
 
 }
