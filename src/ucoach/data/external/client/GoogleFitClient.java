@@ -61,22 +61,35 @@ public class GoogleFitClient extends BaseClient {
 		FitnessCounters counters = new FitnessCounters();
 		jsonParser.loadJson(jsonResponse);
 
-		counters.steps.todayCount = Double.valueOf(jsonParser.getElement("steps/today"));
-		counters.calories.todayCount = Double.valueOf(jsonParser.getElement("calories/today"));
-		counters.distance.todayCount = Double.valueOf(jsonParser.getElement("distance/today"));
+		counters.steps.todayCount = getValueFromJson("steps/today");
+		counters.calories.todayCount = getValueFromJson("calories/today");
+		counters.distance.todayCount = getValueFromJson("distance/today");
 
-		counters.steps.yesterdayCount = Double.valueOf(jsonParser.getElement("steps/yesterday"));
-		counters.calories.yesterdayCount = Double.valueOf(jsonParser.getElement("calories/yesterday"));
-		counters.distance.yesterdayCount = Double.valueOf(jsonParser.getElement("distance/yesterday"));
+		counters.steps.yesterdayCount = getValueFromJson("steps/yesterday");
+		counters.calories.yesterdayCount = getValueFromJson("calories/yesterday");
+		counters.distance.yesterdayCount = getValueFromJson("distance/yesterday");
 		
-		counters.steps.lastWeekCount = Double.valueOf(jsonParser.getElement("steps/last-week"));
-		counters.calories.lastWeekCount = Double.valueOf(jsonParser.getElement("calories/last-week"));
-		counters.distance.lastWeekCount = Double.valueOf(jsonParser.getElement("distance/last-week"));
+		counters.steps.lastWeekCount = getValueFromJson("steps/last-week");
+		counters.calories.lastWeekCount = getValueFromJson("calories/last-week");
+		counters.distance.lastWeekCount = getValueFromJson("distance/last-week");
 		
-		counters.steps.lastMonthCount = Double.valueOf(jsonParser.getElement("steps/last-month"));
-		counters.calories.lastMonthCount = Double.valueOf(jsonParser.getElement("calories/last-month"));
-		counters.distance.lastMonthCount = Double.valueOf(jsonParser.getElement("distance/last-month"));
+		counters.steps.lastMonthCount = getValueFromJson("steps/last-month");
+		counters.calories.lastMonthCount = getValueFromJson("calories/last-month");
+		counters.distance.lastMonthCount = getValueFromJson("distance/last-month");
 		
 		return counters;
+	}
+
+	/**
+	 * Helper method to get Double value from JSON
+	 * @param expr
+	 * @return
+	 * @throws Exception
+	 */
+	private Double getValueFromJson(String expr) throws Exception {
+		String value = jsonParser.getElement(expr);
+		if (value == "" || value == null || value.length() == 0) return 0.0;
+		
+		return Double.valueOf(value);
 	}
 }

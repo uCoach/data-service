@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "HealthMeasureService", targetNamespace = "http://ws.data.ucoach/", wsdlLocation = "http://192.168.0.102:6900/ws/healthmeasure?wsdl")
+@WebServiceClient(name = "HealthMeasureService", targetNamespace = "http://ws.data.ucoach/", wsdlLocation = "https://ucoach-internal-data-service.herokuapp.com/ws/healthmeasure?wsdl")
 public class HealthMeasureService
     extends Service
 {
@@ -30,7 +30,7 @@ public class HealthMeasureService
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://192.168.0.102:6900/ws/healthmeasure?wsdl");
+            url = new URL("https://ucoach-internal-data-service.herokuapp.com/ws/healthmeasure?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }
