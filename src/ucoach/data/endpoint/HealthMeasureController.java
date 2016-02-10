@@ -142,14 +142,12 @@ public class HealthMeasureController {
 			measures.addAll(client.getHealthMeasuresFromUserByType(userId, typeId, fromDate, toDate));
 
 		// Integrate with external data
-		if (!(fromDate == null & toDate == null)) {
-			try {
-				Integration integration = new Integration(userId);
-				measures.addAll(integration.getMeasuresFromExternalSources(Integer.valueOf(typeId), fromDate, toDate));
-			} catch (Exception e) {
-				e.printStackTrace();
-				System.out.println("Unable to integrate with external data");
-			}
+		try {
+			Integration integration = new Integration(userId);
+			measures.addAll(integration.getMeasuresFromExternalSources(Integer.valueOf(typeId), fromDate, toDate));
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Unable to integrate with external data");
 		}
 
 		// Build model and return

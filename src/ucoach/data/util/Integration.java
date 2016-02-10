@@ -71,6 +71,10 @@ public class Integration {
 		
 		HealthMeasure measure = new HealthMeasure();
 		measure.setValue(Float.valueOf((float)(double) counter.todayCount));
+		try {
+			measure.setCreatedDate(DateHandler.toCalendar(TODAY));
+		} catch (ParseException e) {}
+
 		
 		return measure;
 	}
@@ -88,7 +92,10 @@ public class Integration {
 		
 		HealthMeasure measure = new HealthMeasure();
 		measure.setValue(Float.valueOf((float)(double) counter.yesterdayCount));
-		
+		try {
+			measure.setCreatedDate(DateHandler.toCalendar(YESTERDAY));
+		} catch (ParseException e) {}
+
 		return measure;
 	}
 
