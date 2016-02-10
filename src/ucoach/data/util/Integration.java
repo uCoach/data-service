@@ -59,6 +59,20 @@ public class Integration {
 	}
 
 	/**
+	 * Get measure from external sources
+	 * @param measureTypeId
+	 * @return
+	 */
+	public List<HealthMeasure> getMeasuresFromExternalSources(int measureTypeId) {
+		
+		List<HealthMeasure> list = new ArrayList<HealthMeasure>();
+		list.add(getTodayMeasure(measureTypeId));
+		list.add(getYesterdayMeasure(measureTypeId));
+
+		return list;
+	}
+
+	/**
 	 * Get today HealthMeasure
 	 * @param measureTypeId
 	 * @return
@@ -71,6 +85,10 @@ public class Integration {
 		
 		HealthMeasure measure = new HealthMeasure();
 		measure.setValue(Float.valueOf((float)(double) counter.todayCount));
+		try {
+			measure.setCreatedDate(DateHandler.toCalendar(TODAY));
+		} catch (ParseException e) {}
+
 		
 		return measure;
 	}
@@ -88,7 +106,10 @@ public class Integration {
 		
 		HealthMeasure measure = new HealthMeasure();
 		measure.setValue(Float.valueOf((float)(double) counter.yesterdayCount));
-		
+		try {
+			measure.setCreatedDate(DateHandler.toCalendar(YESTERDAY));
+		} catch (ParseException e) {}
+
 		return measure;
 	}
 

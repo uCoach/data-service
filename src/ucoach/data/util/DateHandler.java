@@ -48,6 +48,25 @@ public class DateHandler {
   }
   
   /**
+   * Converts date string to XMLGregorianCalendar
+   * @param strDate
+   * @return
+   * @throws ParseException
+   */
+  public static XMLGregorianCalendar toCalendar(Date date) throws ParseException {
+
+  	GregorianCalendar gCalendar = new GregorianCalendar();
+    gCalendar.setTime(date);
+    XMLGregorianCalendar xmlCalendar = null;
+    try {
+        xmlCalendar = DatatypeFactory.newInstance().newXMLGregorianCalendar(gCalendar);
+    } catch (Exception ex) {
+        return null;
+    }
+    return xmlCalendar;
+  }
+
+  /**
    * Helper method to get today date as string
    * @return
    */
